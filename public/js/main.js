@@ -11,14 +11,12 @@ const getInfo = async(event) => {
     let cityVal = cityName.value;
 
     if(cityVal === ""){
-        city_name.innerText = `Plz write the name before search`;
+        city_name.innerText = `City Name is Required...`;
         datahide.classList.add("data_hide");
     }else{
 
         try{
            
-            // https://api.openweathermap.org/data/2.5/weather?q=Shinkiari&appid=5c0f319c5bada9b525af631189cb6a6b
-
             let url = `http://api.openweathermap.org/data/2.5/weather?q=${cityVal}&units=metric&appid=5c0f319c5bada9b525af631189cb6a6b`
             const response = await fetch(url);
 
